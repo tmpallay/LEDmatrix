@@ -181,16 +181,16 @@ void led_rand( int repeat, unsigned long t ) {
 
 void loop() {
 
-  //zig_rows( 2, 200 );
-  all_on( 5000 );
+  zig_rows( 2, 200 );
+  all_on( 500 );
 
-  //led_rand( 20, 200 );
-  //all_on( 500 );
+  led_rand( 20, 200 );
+  all_on( 500 );
 
-  //zig_cols( 2, 200 );
-  //all_on( 500 );
+  zig_cols( 2, 200 );
+  all_on( 500 );
 
-  //led_rand( 20, 200 );
-  //all_on( 500 );
+  led_rand( 20, 200 );
+  all_on( 500 );
   
 }
