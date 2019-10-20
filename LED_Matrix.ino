@@ -42,12 +42,9 @@ void setup() {
  */
 void led_pulse( int row, int col, unsigned long t ) {
 
-  int multiple, r = 0;
-  if( t > 16383 ) {
-    multiple = t / 16383;
-    r = t % 16383;
-    t = 16383;
-  }
+  int multiple = t / 16383;
+  int r = t % 16383;
+  if( t > 16383 ) t = 16383;
 
   digitalWrite( ROW[row - 1], HIGH );
   digitalWrite( COL[col - 1], LOW );
@@ -115,7 +112,7 @@ void all_on( unsigned long all_t ) {
     
     for( int row = 1; row < 7; row++) {
       for( int col = 1; col < 7; col++) {
-        led_pulse( row, col, 5 );
+        led_pulse( row, col, 20 );
       }
     }
     
@@ -184,16 +181,16 @@ void led_rand( int repeat, unsigned long t ) {
 
 void loop() {
 
-  zig_rows( 2, 200 );
-  all_on( 500 );
+  //zig_rows( 2, 200 );
+  all_on( 5000 );
 
-  led_rand( 20, 200 );
-  all_on( 500 );
+  //led_rand( 20, 200 );
+  //all_on( 500 );
 
-  zig_cols( 2, 200 );
-  all_on( 500 );
+  //zig_cols( 2, 200 );
+  //all_on( 500 );
 
-  led_rand( 20, 200 );
-  all_on( 500 );
+  //led_rand( 20, 200 );
+  //all_on( 500 );
   
 }
