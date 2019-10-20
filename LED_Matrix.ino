@@ -17,8 +17,6 @@ int COL[] = { COL1, COL2, COL3, COL4, COL5, COL6 };
 
 void setup() {
 
-  Serial.begin( 9600 );
-
   for( int i = 0; i < 6; i++ ) {
     digitalWrite( ROW[i], LOW );
     pinMode( ROW[i], OUTPUT );
