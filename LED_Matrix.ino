@@ -108,11 +108,13 @@ void col_pulse( int col, unsigned long col_t ) {
 void all_on( unsigned long all_t ) {
   
   unsigned long start = millis();
-  while( millis() - start < all_t ) {
+  int flag = 1;
+  while( flag ) {
     
     for( int row = 1; row < 7; row++) {
       for( int col = 1; col < 7; col++) {
         led_pulse( row, col, 20 );
+        if( millis() - start > all_t ) flag = 0;
       }
     }
     
